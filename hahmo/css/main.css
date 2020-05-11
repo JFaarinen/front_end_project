@@ -1,3 +1,85 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 80px;
+  top: 60px;
+  cursor: pointer; }
+  .menu-btn:after {
+    content: "";
+    background-image: url(/hahmo/img/button_rune_black.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%; }
+  .menu-btn.close:after {
+    content: "";
+    background-image: url(/hahmo/img/button_rune_white.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 3px solid #c0c0c0;
+    border-radius: 50%; }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0.9; }
+  .menu.show {
+    visibility: visible; }
+  .menu-nav {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 25%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #dbd5b1;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 1.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu .nav-items {
+    transform: translate3d(600px, 0, 0);
+    transition: all 1.5s ease-out; }
+    .menu .nav-items.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-items.current > a {
+      color: #c0c0c0; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    padding: 1rem 0;
+    text-decoration: none;
+    transition: all 1.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #3f2a14; }
+
+.nav-items:nth-child(1) {
+  transition-delay: 0.2s; }
+
+.nav-items:nth-child(2) {
+  transition-delay: 0.4s; }
+
+.nav-items:nth-child(3) {
+  transition-delay: 0.6s; }
+
+.nav-items:nth-child(4) {
+  transition-delay: 0.8s; }
+
+.nav-items:nth-child(5) {
+  transition-delay: 1s; }
+
 * {
   box-sizing: border-box; }
 
@@ -47,6 +129,3 @@ main {
   margin: 0.5rem;
   padding: 0.5rem;
   background: rgba(230, 226, 201, 0.5); }
-
-.menu-btn {
-  background-image: url(../hahmo/img/ring_small.png); }

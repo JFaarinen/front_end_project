@@ -1,0 +1,100 @@
+//Menu button
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 80px;
+  top: 60px;
+
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    background-image: url(/hahmo/img/button_rune_black.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+  }
+
+  &.close {
+    &:after {
+      content: "";
+      background-image: url(/hahmo/img/button_rune_white.png);
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      border: 3px solid $active-link-color;
+      border-radius: 50%;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0.9;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-nav {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 25%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: darken($bg-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include transistio;
+
+    &.show {
+      //Slide in effect
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .nav-items {
+    transform: translate3d(600px, 0, 0);
+    @include transistio;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $active-link-color;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    padding: 1rem 0;
+    text-decoration: none;
+    @include transistio;
+
+    &:hover {
+      color: $element-color;
+    }
+  }
+}
+
+@for $x from 1 through 5 {
+  .nav-items:nth-child(#{$x}) {
+    transition-delay: $x * 0.2s;
+  }
+}

@@ -1,0 +1,31 @@
+$bg-color: #e3dec2;
+$element-color: #3f2a14;
+$active-link-color: #c0c0c0;
+$show-home-image: true;
+$home-image: url(/hahmo/img/wilderness_map.jpg);
+$background-opacity: 0.8;
+
+@mixin transistio {
+  transition: all 1.5s ease-out;
+}
+
+@mixin tausta {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($bg-color, $background-opacity);
+        z-index: -1;
+      }
+    }
+  }
+}
