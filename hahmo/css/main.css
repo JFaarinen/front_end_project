@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #e3dec2;
+  height: 100%;
+  margin: auto;
+  font-family: "Aclonica";
+  line-height: 1.5; }
+  body#bg-img {
+    background: url(/hahmo/img/wilderness_map.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+    body#bg-img:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(227, 222, 194, 0.8);
+      z-index: -1; }
+
+h1,
+h2,
+h3 {
+  margin: 0; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+main {
+  padding: 4rem;
+  height: 100%; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 20vh; }
+
+.statblock {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(230, 226, 201, 0.5); }
+
+.menu-btn {
+  background-image: url(../hahmo/img/ring_small.png); }
