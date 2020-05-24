@@ -42,7 +42,7 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background: #dbd5b1;
+    background: #d9d3ad;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 1.5s ease-out; }
@@ -54,13 +54,14 @@
     .menu .nav-items.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-items.current > a {
-      color: #c0c0c0; }
+      text-decoration: underline; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
     font-size: 24px;
     padding: 1rem 0;
     text-decoration: none;
+    color: #000;
     transition: all 1.5s ease-out; }
     .menu .nav-link:hover {
       color: #3f2a14; }
@@ -80,15 +81,45 @@
 .nav-items:nth-child(5) {
   transition-delay: 1s; }
 
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0;
+    transform: matrix3d(-100%, 0, 0); }
+    ul.menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .char-info h2 {
+    font-size: 18px;
+    display: block; }
+  .char-info p {
+    display: block; }
+  .skill-container {
+    display: grid;
+    grid-template-areas: "body" "heart" "wits";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
 * {
   box-sizing: border-box; }
 
 body {
   background: #e3dec2;
+  color: #000;
   height: 100%;
   margin: auto;
   font-family: "Aclonica";
-  line-height: 1.5; }
+  line-height: 1.5;
+  overflow: hidden; }
   body#bg-img {
     background: url(/hahmo/img/wilderness_map.jpg);
     background-repeat: no-repeat;
@@ -118,14 +149,104 @@ header {
   width: 100%; }
 
 main {
-  padding: 4rem;
-  height: 100%; }
+  padding: 3rem;
+  height: 100%;
+  margin-left: 10vw; }
   main#home {
     overflow: hidden; }
     main#home h1 {
-      margin-top: 20vh; }
+      margin-top: 8vh;
+      margin-bottom: 10px; }
 
 .statblock {
   margin: 0.5rem;
   padding: 0.5rem;
   background: rgba(230, 226, 201, 0.5); }
+  .statblock .char-attrib {
+    display: grid;
+    grid-gap: 10vh;
+    width: 20vh;
+    grid-template-areas: "body heart wits";
+    grid-template-columns: repeat(3, 3fr); }
+  .statblock .sec-attrib {
+    display: flex; }
+    .statblock .sec-attrib .attrib {
+      margin-right: 10vh; }
+  .statblock .attrib {
+    margin-bottom: 10px; }
+    .statblock .attrib .h2 .h3 .value {
+      display: inline; }
+  .statblock .value {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    padding: 10px;
+    border: 3px solid #3f2a14;
+    border-radius: 50%;
+    font-weight: 800; }
+
+.skill-container {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "body heart wits";
+  grid-template-columns: repeat(3, 1fr); }
+  .skill-container .body {
+    grid-area: body; }
+  .skill-container .heart {
+    grid-area: heart; }
+  .skill-container .wits {
+    grid-area: wits; }
+
+.skills {
+  background: rgba(230, 226, 201, 0.5);
+  padding: 20px; }
+  .skills .skill {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "nimi taso";
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 20px; }
+    .skills .skill .nimi {
+      grid-area: nimi;
+      width: 120px; }
+    .skills .skill .taso {
+      font-size: 2rem;
+      grid-area: taso;
+      align-content: flex-start; }
+
+.skill {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "nimi taso";
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px; }
+  .skill .nimi {
+    grid-area: nimi; }
+    .skill .nimi.favoured {
+      text-decoration: underline; }
+  .skill .taso {
+    font-size: 2rem;
+    grid-area: taso;
+    align-content: flex-start; }
+
+.combat {
+  display: flex;
+  background: rgba(230, 226, 201, 0.5);
+  padding: 20px; }
+
+.char-info {
+  margin-top: 10px;
+  padding: 15px; }
+  .char-info h2,
+  .char-info p {
+    display: inline; }
+  .char-info h2 {
+    margin-right: 10px; }
+
+.char-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 4px solid #3f2a14;
+  background-image: url(/hahmo/img/potrait.JPG);
+  margin-top: 10vh; }

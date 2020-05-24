@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "mobile";
 
 * {
   box-sizing: border-box;
@@ -8,10 +9,12 @@
 body {
   @include tausta;
   background: $bg-color;
+  color: sopeutaTekstinVari($bg-color);
   height: 100%;
   margin: auto;
   font-family: "Aclonica";
   line-height: 1.5;
+  overflow: hidden;
 }
 
 //Headings
@@ -22,7 +25,7 @@ h3 {
 }
 
 a {
-  color: #000;
+  color: sopeutaTekstinVari($bg-color);
   text-decoration: none;
 }
 
@@ -33,13 +36,15 @@ header {
 }
 
 main {
-  padding: 4rem;
+  padding: 3rem;
   height: 100%;
+  margin-left: 10vw;
 
   &#home {
     overflow: hidden;
     h1 {
-      margin-top: 20vh;
+      margin-top: 8vh;
+      margin-bottom: 10px;
     }
   }
 }
@@ -48,4 +53,131 @@ main {
   margin: 0.5rem;
   padding: 0.5rem;
   background: rgba(lighten($bg-color, 2), 0.5);
+
+  .char-attrib {
+    display: grid;
+    grid-gap: 10vh;
+    width: 20vh;
+    grid-template-areas: "body heart wits";
+    grid-template-columns: repeat(3, 3fr);
+  }
+
+  .sec-attrib {
+    display: flex;
+
+    .attrib {
+      margin-right: 10vh;
+    }
+  }
+
+  .attrib {
+    margin-bottom: 10px;
+
+    .h2 .h3 .value {
+      display: inline;
+    }
+  }
+
+  .value {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    padding: 10px;
+    border: 3px solid $element-color;
+    border-radius: 50%;
+    font-weight: 800;
+  }
+}
+
+.skill-container {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "body heart wits";
+  grid-template-columns: repeat(3, 1fr);
+
+  .body {
+    grid-area: body;
+  }
+
+  .heart {
+    grid-area: heart;
+  }
+
+  .wits {
+    grid-area: wits;
+  }
+}
+
+.skills {
+  background: rgba(lighten($bg-color, 2), 0.5);
+  padding: 20px;
+  .skill {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "nimi taso";
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 20px;
+
+    .nimi {
+      grid-area: nimi;
+      width: 120px;
+    }
+
+    .taso {
+      font-size: 2rem;
+      grid-area: taso;
+      align-content: flex-start;
+    }
+  }
+}
+
+.skill {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "nimi taso";
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px;
+
+  .nimi {
+    grid-area: nimi;
+
+    &.favoured {
+      text-decoration: underline;
+    }
+  }
+
+  .taso {
+    font-size: 2rem;
+    grid-area: taso;
+    align-content: flex-start;
+  }
+}
+
+.combat {
+  display: flex;
+  //grid-template-columns: repeat(1, 2fr);
+  background: rgba(lighten($bg-color, 2), 0.5);
+  padding: 20px;
+}
+
+.char-info {
+  margin-top: 10px;
+  padding: 15px;
+  h2,
+  p {
+    display: inline;
+  }
+
+  h2 {
+    margin-right: 10px;
+  }
+}
+
+.char-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 4px solid $element-color;
+  background-image: url(/hahmo/img/potrait.JPG);
+  margin-top: 10vh;
 }

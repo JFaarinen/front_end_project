@@ -29,3 +29,38 @@ $background-opacity: 0.8;
     }
   }
 }
+
+// Tekstin värin säätäminen
+@function sopeutaTekstinVari($vari) {
+  @if (lightness($vari) > 40) {
+    @return #000;
+  } @else {
+    @return #c0c0c0;
+  }
+}
+
+//Responsiiviset näkymät
+
+@mixin nakymaS {
+  @media screen and(max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin nakymaM {
+  @media screen and(max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin nakymaL {
+  @media screen and(min-width: 769px) and(max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin nakymaXL {
+  @media screen and(min-width: 1171px) {
+    @content;
+  }
+}

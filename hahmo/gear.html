@@ -4,51 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>-Gear-</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Aclonica"
+      rel="stylesheet"
+    />
+    <title>Character sheet</title>
   </head>
-  <body>
+  <body id="bg-img">
     <header>
-      <div class="menu-btn">
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-      </div>
+      <div class="menu-btn"></div>
       <nav class="menu">
-        <div class="menu-branding">
-          <div class="portrait"></div>
-        </div>
         <ul class="menu-nav">
-          <li class="nav-item">
+          <li class="nav-items">
             <a href="index.html" class="nav-link">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-items">
             <a href="basics.html" class="nav-link">Basic information</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-items">
             <a href="attributes.html" class="nav-link">Attributes</a>
           </li>
-          <li class="nav-item">
-            <a href="Skills.html" class="nav-link">Skills</a>
+          <li class="nav-items">
+            <a href="skills.html" class="nav-link">Skills</a>
           </li>
-          <li class="nav-item current">
+          <li class="nav-items current">
             <a href="gear.html" class="nav-link">Gear</a>
           </li>
         </ul>
       </nav>
     </header>
     <main id="home">
-        <div class="statblock">
-            <h2 class="sm-heading">Basic information</h2>
-            <div><h2>Name</h2>Arbereth</div>
-            <div><h2>Culture</h2>Rangers of the North</div>
-            <div><h2>Standard of living</h2>Martial</div>
-            <div><h2>Cultural Blessing</h2>Foresight of their kindred</div>
-            <div><h2>Calling</h2>Wanderer</div>
-            <div><h2>Shadow weakness</h2>Wandering madness</div>
-            <div><h2>Specialities</h2>Smoking, Beast-Lore, Folk-Lore, Foresighted</div>
-            <div><h2>Distinctive features</h2>Hardy, Quick of hearing</div>
-        </div>
+      <div class="statblock">
+          <h2 class="sm-heading">Weapons</h2>
+          <div class='weapon'><h3>Long sword</h3><p>Damage: 5/7 Edge: 10 Injury: 16/18 Enc: 3</p></div>
+          <div class='weapon'><h3>Bow</h3><p>Damage: 5 Edge: 10 Ingury: 14 Enc: 0</p></div>
+          <div class='weapon'><h3>Dagger</h3><p>Damage: 3 Edge: G Injury: 12 Enc 0</p></div>         
       </div>
-    </main>
+      <div class="statblock">
+        <h2 class="sm-heading">Armour</h2>
+        <div class='armour'><h3>Leather corslet</h3><p>Value: 2D Enc: 8</p></div>
+        <div class='armour'><h3>Cap of leather</h3><p>Value: +1 Enc: 2</p></div>
+        <div class='armour'><h3>Buckler</h3><p>Value: +1 Enc: 1</p></div>         
+    </div>
+    <div class="statblock">
+      <h2 class="sm-heading">Other gear</h2>
+      <div class='gear'><p>Workmanlike bag of dried mushrooms</p></div>
+      <div class='gear'><p>Travelling birch cuph</p></div>
+      <div class='gear'><p>Trusty iron-shod walking stave</p></div>         
+  </div>
+    </div>
+  </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
