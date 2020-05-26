@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-@import "mobile";
 
 * {
   box-sizing: border-box;
@@ -155,7 +154,6 @@ main {
 
 .combat {
   display: flex;
-  //grid-template-columns: repeat(1, 2fr);
   background: rgba(lighten($bg-color, 2), 0.5);
   padding: 20px;
 }
@@ -181,3 +179,5 @@ main {
   background-image: url(/hahmo/img/potrait.JPG);
   margin-top: 10vh;
 }
+
+@import "mobile";
