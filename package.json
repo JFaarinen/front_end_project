@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Front end course project",
   "main": "index.js",
-  "homepage": "https://JFaarinen.github.io/hahmo",
+  "homepage": "https://JFaarinen.github.io/front_end_project",
   "scripts": {
     "sass": "node-sass -w scss/ -o hahmo/css --recursive",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
